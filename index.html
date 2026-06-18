@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VESSEL · 베슬 — 생활을 위한 오브제 편집숍</title>
+<meta name="description" content="오래 곁에 둘 사물을 고릅니다. 세라믹·가구·조명을 큐레이션하는 생활 오브제 편집숍 VESSEL. 컬렉션, 소재 이야기, 매장 안내.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{
+  --bg:#EAE6DE; --paper:#F4F1EA; --ink:#272320; --clay:#B05C3C; --olive:#7C7A5E; --line:#D8D2C5; --grey:#6F6A60;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;background:var(--bg);color:var(--ink);
+  line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden}
+.serif{font-family:"Newsreader",Georgia,serif}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:90%;max-width:1240px;margin:0 auto}
+.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border:1px solid var(--ink);background:transparent;
+  color:var(--ink);font-size:.85rem;font-weight:600;letter-spacing:.03em;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn--clay{background:var(--clay);border-color:var(--clay);color:#fff}
+.btn--clay:hover{background:var(--ink);border-color:var(--ink)}
+.section{padding:90px 0}
+
+/* 내비 */
+.topnav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 5%;background:rgba(234,230,222,.92);border-bottom:1px solid var(--line);transition:padding .3s}
+.topnav__logo{font-family:"Newsreader",serif;font-weight:600;font-size:1.5rem;letter-spacing:.04em}
+.topnav__logo b{color:var(--clay);font-weight:600}
+.topnav__links{display:flex;gap:28px;align-items:center}
+.topnav__links a{font-size:.9rem;font-weight:500}
+.topnav__links a:hover{color:var(--clay)}
+.topnav__cta{padding:9px 18px}
+.topnav__burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.topnav__burger i{width:23px;height:1.6px;background:var(--ink);display:block}
+
+/* 히어로 (슬림) */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:60px 0 30px}
+.hero__kicker{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.04em;color:var(--clay);margin-bottom:18px}
+.hero__title{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(2.5rem,5.4vw,4.2rem);line-height:1.08;letter-spacing:-.01em}
+.hero__title em{font-style:italic;color:var(--clay)}
+.hero__lead{margin:24px 0 30px;font-size:1.04rem;color:var(--grey);max-width:34ch}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero__media{position:relative;aspect-ratio:4/3;background:var(--paper)}
+.hero__media img{width:100%;height:100%;object-fit:cover}
+.hero__media figcaption{position:absolute;left:14px;bottom:14px;background:var(--paper);color:var(--ink);
+  font-family:"Newsreader",serif;font-style:italic;font-size:.85rem;padding:5px 12px}
+
+@media (max-width:860px){
+  .topnav__links{position:fixed;inset:0 0 0 auto;width:74%;max-width:300px;background:var(--paper);flex-direction:column;
+    justify-content:center;gap:26px;transform:translateX(100%);transition:transform .3s;box-shadow:-8px 0 40px rgba(0,0,0,.1);z-index:70}
+  .topnav__links.open{transform:translateX(0)}
+  .topnav__links a{font-size:1.1rem}
+  .topnav__cta{display:none}
+  .topnav__burger{display:flex;z-index:71}
+  .hero{grid-template-columns:1fr;gap:26px;padding:30px 0 10px}
+  .hero__media{aspect-ratio:3/2}
+  .section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- 내비 -->
+<nav class="topnav" id="topnav">
+  <a class="topnav__logo" href="#home">VES<b>S</b>EL</a>
+  <div class="topnav__links" id="navLinks">
+    <a href="#shop">오브제</a>
+    <a href="#material">소재 이야기</a>
+    <a href="#visit">매장</a>
+    <a href="#contact">문의</a>
+    <a href="https://smartstore.naver.com" target="_blank" rel="noopener" class="btn btn--clay topnav__cta">스토어</a>
+  </div>
+  <button class="topnav__burger" id="burger" aria-label="메뉴"><i></i><i></i><i></i></button>
+</nav>
+
+<!-- 히어로 (슬림) -->
+<header class="wrap" id="home">
+  <div class="hero">
+    <div class="hero__text reveal">
+      <span class="hero__kicker">생활을 위한 사물 · 서울</span>
+      <h1 class="hero__title">오래 곁에 둘<br><em>사물</em>을 고릅니다</h1>
+      <p class="hero__lead">유행보다 결을 봅니다. 매일 쓰는 그릇과 오래 두는 가구, 손이 기억하는 물성을 한자리에.</p>
+      <div class="hero__cta">
+        <a href="#shop" class="btn btn--clay">컬렉션 보기</a>
+        <a href="https://smartstore.naver.com" target="_blank" rel="noopener" class="btn">스토어</a>
+      </div>
+    </div>
+    <figure class="hero__media reveal">
+      <img src="https://images.unsplash.com/photo-1557644978-f61037cfbe49?auto=format&fit=crop&w=1100&q=80" alt="VESSEL 스톤웨어 오브제">
+      <figcaption>Stoneware — 2026</figcaption>
+    </figure>
+  </div>
+</header>
+
+<style>
+/* 숍 — 매거진 그리드 */
+#shop{background:var(--paper)}
+.shop__head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;margin-bottom:30px}
+.shop__head h2{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(2rem,4vw,3rem);line-height:1.05}
+.filter{display:flex;gap:8px;flex-wrap:wrap}
+.filter button{border:1px solid var(--line);background:transparent;padding:8px 16px;font-size:.8rem;font-weight:600;
+  border-radius:30px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.filter button.on,.filter button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:228px;gap:14px;grid-auto-flow:dense}
+.mcard{position:relative;overflow:hidden;cursor:pointer;background:var(--bg)}
+.mcard img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.mcard:hover img{transform:scale(1.045)}
+.mcard--feat{grid-column:span 2;grid-row:span 2}
+.mcard--wide{grid-column:span 2}
+.mcard--tall{grid-row:span 2}
+.mcard__cat{position:absolute;top:10px;left:10px;background:var(--paper);color:var(--ink);font-size:.64rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:3px 9px}
+.mcard__plus{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:var(--paper);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;font-size:1.15rem;line-height:1;opacity:0;transition:opacity .3s}
+.mcard:hover .mcard__plus{opacity:1}
+.mcard__cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;
+  background:linear-gradient(transparent,rgba(39,35,32,.62));color:var(--paper);opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.mcard:hover .mcard__cap{opacity:1;transform:none}
+.mcard__name{font-family:"Newsreader",serif;font-size:1rem}
+.mcard__price{font-weight:700;white-space:nowrap}
+.shop__note{margin-top:18px;font-size:.82rem;color:var(--grey)}
+
+@media (max-width:860px){
+  .mgrid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px;gap:10px}
+  .mcard--feat{grid-column:span 2;grid-row:span 2}
+  .mcard--wide{grid-column:span 2;grid-row:span 1}
+  .mcard--tall{grid-row:span 1}
+  .mcard__cap{opacity:1;transform:none;background:linear-gradient(transparent,rgba(39,35,32,.7))}
+  .mcard__plus{opacity:1}
+}
+</style>
+
+<!-- 숍 (매거진 그리드) -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="shop__head reveal">
+      <div><p class="eyebrow">Collection</p><h2 class="serif">이번 시즌의 오브제</h2></div>
+      <div class="filter" id="filter">
+        <button class="on" data-cat="전체">전체</button>
+        <button data-cat="화병·오브제">화병·오브제</button>
+        <button data-cat="테이블웨어">테이블웨어</button>
+        <button data-cat="가구·조명">가구·조명</button>
+      </div>
+    </div>
+    <div class="mgrid" id="mgrid">
+      <figure class="mcard mcard--feat" data-cat="화병·오브제" data-name="그린 글레이즈 화병" data-material="석기 · 환원소성 · 높이 24cm" data-price="88,000" data-full="https://images.unsplash.com/photo-1481401908818-600b7a676c0d?auto=format&fit=crop&w=1300&q=80">
+        <span class="mcard__cat">화병·오브제</span><span class="mcard__plus">+</span>
+        <img src="https://images.unsplash.com/photo-1481401908818-600b7a676c0d?auto=format&fit=crop&w=900&q=80" alt="그린 글레이즈 화병" loading="lazy">
+        <figcaption class="mcard__cap"><span class="mcard__name">그린 글레이즈 화병</span><span class="mcard__price">88,000</span></figcaption></figure>
+
+      <figure class="mcard" data-cat="테이블웨어" data-name="스톤 머그 (2P)" data-material="석기 · 전자레인지 사용 가능" data-price="42,000" data-full="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=80">
+        <span class="mcard__cat">테이블웨어</span><span class="mcard__plus">+</span>
+        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=680&q=80" alt="스톤 머그 세트" loading="lazy">
+        <figcaption class="mcard__cap"><span class="mcard__name">스톤 머그 (2P)</span><span class="mcard__price">42,000</span></figcaption></figure>
+
+      <figure class="mcard" data-cat="테이블웨어" data-name="마뜨 세라믹 볼" data-material="도기 · 지름 16cm" data-price="36,000" data-full="https://images.unsplash.com/photo-1610128361323-6e941c97f023?auto=format&fit=crop&w=1200&q=80">
+        <span class="mcard__cat">테이블웨어</span><span class="mcard__plus">+</span>
+        <img src="https://images.unsplash.com/photo-1610128361323-6e941c97f023?auto=format&fit=crop&w=680&q=80" alt="마뜨 세라믹 볼" loading="lazy">
+        <figcaption class="mcard__cap"><span class="mcard__name">마뜨 세라믹 볼</span><span class="mcard__price">36,000</span></figcaption></figure>
+
+      <figure class="mcard mcard--tall" data-cat="화병·오브제" data-name="빈티지 베이스 컬렉션" data-material="빈티지 셀렉트 · 개체별 상이" data-price="64,000" data-full="https://images.unsplash.com/photo-1597696929736-6d13bed8e6a8?auto=format&fit=crop&w=1100&q=80">
+        <span class="mcard__cat">화병·오브제</span><span class="mcard__plus">+</span>
+        <img src="https://images.unsplash.com/photo-1597696929736-6d13bed8e6a8?auto=format&fit=crop&w=760&q=80" alt="빈티지 베이스 컬렉션" loading="lazy">
+        <figcaption class="mcard__cap"><span class="mcard__name">빈티지 베이스 컬렉션</span><span class="mcard__price">64,000~</span></figcaption></figure>
+
+      <figure class="mcard" data-cat="가구·조명" data-name="셸 라운지 체어" data-material="자작나무 합판 · 패브릭" data-price="320,000" data-full="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=1200&q=80">
+        <span class="mcard__cat">가구·조명</span><span class="mcard__plus">+</span>
+        <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=680&q=80" alt="셸 라운지 체어" loading="lazy">
+        <figcaption class="mcard__cap"><span class="mcard__name">셸 라운지 체어</span><span class="mcard__price">320,000</span></figcaption></figure>
+
+      <figure class="mcard mcard--wide" data-cat="가구·조명" data-name="아치 플로어 램프" data-material="알루미늄 · 리넨 셰이드 · 디머 포함" data-price="180,000" data-full="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?auto=format&fit=crop&w=1300&q=80">
+        <span class="mcard__cat">가구·조명</span><span class="mcard__plus">+</span>
+        <img src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?auto=format&fit=crop&w=1100&q=80" alt="아치 플로어 램프 스타일링" loading="lazy">
+        <figcaption class="mcard__cap"><span class="mcard__name">아치 플로어 램프</span><span class="mcard__price">180,000</span></figcaption></figure>
+
+      <figure class="mcard" data-cat="화병·오브제" data-name="라운드 세라믹 트레이" data-material="도기 · 지름 22cm" data-price="52,000" data-full="https://images.unsplash.com/photo-1635847420907-407d08eaa945?auto=format&fit=crop&w=1200&q=80">
+        <span class="mcard__cat">화병·오브제</span><span class="mcard__plus">+</span>
+        <img src="https://images.unsplash.com/photo-1635847420907-407d08eaa945?auto=format&fit=crop&w=680&q=80" alt="라운드 세라믹 트레이" loading="lazy">
+        <figcaption class="mcard__cap"><span class="mcard__name">라운드 세라믹 트레이</span><span class="mcard__price">52,000</span></figcaption></figure>
+
+      <figure class="mcard" data-cat="테이블웨어" data-name="공방 보울 (소)" data-material="석기 · 핸드메이드 · 지름 12cm" data-price="28,000" data-full="https://images.unsplash.com/photo-1604095616439-216735abec0c?auto=format&fit=crop&w=1200&q=80">
+        <span class="mcard__cat">테이블웨어</span><span class="mcard__plus">+</span>
+        <img src="https://images.unsplash.com/photo-1604095616439-216735abec0c?auto=format&fit=crop&w=680&q=80" alt="공방 보울" loading="lazy">
+        <figcaption class="mcard__cap"><span class="mcard__name">공방 보울 (소)</span><span class="mcard__price">28,000</span></figcaption></figure>
+    </div>
+    <p class="shop__note">* 가격·재고는 네이버 스마트스토어 기준입니다. 핸드메이드 특성상 개체별 색·크기 차이가 있을 수 있어요.</p>
+  </div>
+</section>
+
+<style>
+/* 소재 이야기 */
+.material{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.material__media{aspect-ratio:4/5;overflow:hidden}
+.material__media img{width:100%;height:100%;object-fit:cover}
+.material__text .h2{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(1.9rem,3.8vw,2.9rem);line-height:1.1;margin:8px 0 18px}
+.material__text p{color:var(--grey);margin-bottom:14px}
+.material__text .sign{font-family:"Newsreader",serif;font-style:italic;color:var(--clay);margin-top:6px}
+
+/* 매장 */
+#visit{background:var(--paper)}
+.visit{display:grid;grid-template-columns:1.25fr .75fr;gap:46px;align-items:stretch;margin-top:34px}
+.visit__map{aspect-ratio:auto;min-height:380px;overflow:hidden;border:1px solid var(--line)}
+.visit__map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+.visit__info h3{font-family:"Newsreader",serif;font-size:1.5rem;margin-bottom:16px}
+.vrow{padding:13px 0;border-bottom:1px solid var(--line)}
+.vrow .l{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clay)}
+.vrow p{margin-top:3px}
+
+/* 문의 */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.contact__intro .h2{font-family:"Newsreader",serif;font-weight:500;font-size:clamp(1.9rem,3.8vw,2.7rem);line-height:1.1;margin-bottom:14px}
+.contact__intro p{color:var(--grey)}
+.form{background:var(--paper);border:1px solid var(--line);padding:28px}
+.form .field{margin-bottom:15px}
+.form label{display:block;font-size:.78rem;font-weight:700;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;padding:12px 13px;border:1px solid var(--line);background:var(--bg);
+  font-family:inherit;font-size:.95rem;color:var(--ink)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--clay)}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* 푸터 */
+.footer{background:var(--ink);color:var(--bg);padding:52px 0 110px}
+.footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:22px;align-items:flex-end}
+.footer__logo{font-family:"Newsreader",serif;font-size:2rem}
+.footer__logo b{color:var(--clay)}
+.footer small{color:rgba(234,230,222,.6);font-size:.82rem;line-height:1.8;display:block}
+.footer a{color:var(--clay)}
+
+/* 모바일 하단바 */
+.mbar{display:none}
+
+/* 라이트박스 */
+.lightbox{position:fixed;inset:0;z-index:120;background:rgba(39,35,32,.72);display:flex;align-items:center;justify-content:center;
+  padding:24px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.lightbox.show{opacity:1;visibility:visible}
+.lightbox__inner{background:var(--paper);max-width:880px;width:100%;display:grid;grid-template-columns:1.2fr .8fr;overflow:hidden;max-height:88vh}
+.lightbox__img{background:var(--bg)}
+.lightbox__img img{width:100%;height:100%;object-fit:cover;max-height:88vh}
+.lightbox__body{padding:34px 32px;display:flex;flex-direction:column}
+.lightbox__cat{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clay)}
+.lightbox__name{font-family:"Newsreader",serif;font-size:1.7rem;margin:8px 0 6px}
+.lightbox__mat{color:var(--grey);font-size:.92rem;margin-bottom:18px}
+.lightbox__price{font-size:1.3rem;font-weight:700;margin-bottom:24px}
+.lightbox__price small{font-size:.8rem;color:var(--grey);font-weight:500}
+.lightbox__x{position:absolute;top:18px;right:22px;background:none;border:none;color:var(--paper);font-size:2rem;cursor:pointer;line-height:1}
+
+@media (max-width:860px){
+  .material{grid-template-columns:1fr;gap:26px}
+  .material__media{aspect-ratio:4/3;order:-1}
+  .visit{grid-template-columns:1fr;gap:24px}
+  .contact{grid-template-columns:1fr;gap:28px}
+  .form .two{grid-template-columns:1fr}
+  .footer{padding:42px 0 96px}.footer .wrap{flex-direction:column;align-items:flex-start}
+  .lightbox__inner{grid-template-columns:1fr;max-height:90vh;overflow-y:auto}
+  .lightbox__img{aspect-ratio:4/3}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:90;border-top:1px solid var(--line)}
+  .mbar a{flex:1;text-align:center;padding:15px 4px;font-size:.84rem;font-weight:700}
+  .mbar a.store{background:var(--clay);color:#fff}
+  .mbar a.ig{background:var(--ink);color:var(--bg)}
+  .mbar a.ask{background:var(--paper);color:var(--ink);border-left:1px solid var(--line)}
+}
+</style>
+
+<!-- 소재 이야기 -->
+<section class="section" id="material">
+  <div class="wrap material">
+    <div class="material__media reveal">
+      <img src="https://images.unsplash.com/photo-1610206349499-c932c3b3aacb?auto=format&fit=crop&w=1000&q=80" alt="작업실 선반의 도자기들">
+    </div>
+    <div class="material__text reveal">
+      <p class="eyebrow">Material</p>
+      <h2 class="h2">물성을 먼저<br>생각합니다</h2>
+      <p>VESSEL의 그릇 대부분은 국내 소규모 공방과 함께 만듭니다. 기계로 찍어낸 균일함보다, 손이 남긴 미묘한 차이를 더 좋아합니다.</p>
+      <p>석기·도기·자작 합판처럼 시간이 지날수록 길드는 소재를 고릅니다. 빨리 사고 빨리 버리는 물건이 아니라, 오래 쓰며 정드는 물건을 지향해요.</p>
+      <p class="sign serif">— 사물을 고르는 사람들, VESSEL</p>
+    </div>
+  </div>
+</section>
+
+<!-- 매장 -->
+<section class="section" id="visit">
+  <div class="wrap">
+    <p class="eyebrow">Visit</p>
+    <h2 class="serif" style="font-size:clamp(1.9rem,3.8vw,2.9rem)">성수 쇼룸</h2>
+    <div class="visit">
+      <div class="visit__map reveal">
+        <iframe title="VESSEL 성수 쇼룸 지도" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=127.0480%2C37.5400%2C127.0640%2C37.5500&layer=mapnik&marker=37.5448%2C127.0560"></iframe>
+      </div>
+      <div class="visit__info reveal">
+        <h3 class="serif">VESSEL Seongsu</h3>
+        <div class="vrow"><span class="l">주소</span><p>서울 성동구 성수동 00-0 2F <small>(샘플 주소)</small></p></div>
+        <div class="vrow"><span class="l">영업시간</span><p>화–일 12:00 – 20:00 · 월 휴무</p></div>
+        <div class="vrow"><span class="l">스토어</span><p><a href="https://smartstore.naver.com" target="_blank" rel="noopener" style="color:var(--clay);font-weight:700">네이버 스마트스토어</a></p></div>
+        <div class="vrow"><span class="l">인스타그램</span><p><a href="https://instagram.com" target="_blank" rel="noopener" style="color:var(--clay);font-weight:700">@vessel.seoul</a></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 문의 (도매·공간 컨설팅) -->
+<section class="section" id="contact">
+  <div class="wrap contact">
+    <div class="contact__intro reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 class="h2">도매 · 공간<br>스타일링 문의</h2>
+      <p>카페·호텔·오피스 공간 스타일링, 도매·납품, 작가 입점 제안을 환영합니다. 남겨주시면 영업일 기준 2–3일 안에 회신드려요.</p>
+      <p style="margin-top:10px;color:var(--grey);font-size:.88rem">* 개별 상품 구매·재고 문의는 스마트스토어 또는 인스타그램 DM을 이용해 주세요.</p>
+    </div>
+    <form class="form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="two">
+        <div class="field"><label for="name">성함 / 상호</label><input id="name" name="name" type="text" required></div>
+        <div class="field"><label for="email">이메일</label><input id="email" name="email" type="email" required></div>
+      </div>
+      <div class="field"><label for="type">문의 유형</label>
+        <select id="type" name="type"><option>공간 스타일링</option><option>도매·납품</option><option>작가 입점</option><option>기타</option></select></div>
+      <div class="field"><label for="msg">내용</label><textarea id="msg" name="msg" rows="4" placeholder="공간 규모, 일정, 필요 품목 등을 적어주세요"></textarea></div>
+      <button type="submit" class="btn btn--clay" style="width:100%;justify-content:center">문의 보내기</button>
+    </form>
+  </div>
+</section>
+
+<!-- 푸터 -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__logo serif">VES<b>S</b>EL</div>
+    <div>
+      <small>서울 성동구 성수동 00-0 2F · 화–일 12:00–20:00<br><a href="https://smartstore.naver.com" target="_blank" rel="noopener">스마트스토어</a> · <a href="https://instagram.com" target="_blank" rel="noopener">@vessel.seoul</a><br>© 2026 VESSEL. 이피웹 제작 샘플.</small>
+    </div>
+  </div>
+</footer>
+
+<!-- 모바일 하단바 -->
+<div class="mbar">
+  <a class="store" href="https://smartstore.naver.com" target="_blank" rel="noopener">스토어</a>
+  <a class="ig" href="https://instagram.com" target="_blank" rel="noopener">인스타</a>
+  <a class="ask" href="#contact">문의</a>
+</div>
+
+<!-- 라이트박스 퀵뷰 -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__x" id="lbX" aria-label="닫기">&times;</button>
+  <div class="lightbox__inner">
+    <div class="lightbox__img"><img id="lbImg" src="" alt="제품 확대"></div>
+    <div class="lightbox__body">
+      <span class="lightbox__cat" id="lbCat"></span>
+      <h3 class="lightbox__name serif" id="lbName"></h3>
+      <p class="lightbox__mat" id="lbMat"></p>
+      <p class="lightbox__price" id="lbPrice"></p>
+      <a class="btn btn--clay" id="lbStore" href="https://smartstore.naver.com" target="_blank" rel="noopener" style="justify-content:center">스토어에서 보기 →</a>
+      <p style="margin-top:14px;font-size:.8rem;color:var(--grey)">매장 픽업·예약은 인스타그램 DM으로 문의해 주세요.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+/* 스크롤 리빌 — 데스크탑 한정(모바일 항상 표시) */
+.reveal{opacity:1;transform:none}
+@media (min-width:861px){
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+}
+</style>
+
+<script>
+(function(){
+  // 모바일 햄버거
+  var burger=document.getElementById('burger'), links=document.getElementById('navLinks');
+  if(burger){ burger.addEventListener('click',function(){ links.classList.toggle('open'); }); }
+  links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ links.classList.remove('open'); }); });
+
+  // 필터
+  var filter=document.getElementById('filter'), cards=[].slice.call(document.querySelectorAll('#mgrid .mcard'));
+  if(filter){ filter.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    filter.querySelectorAll('button').forEach(function(x){ x.classList.remove('on'); });
+    b.classList.add('on');
+    var cat=b.getAttribute('data-cat');
+    cards.forEach(function(c){ c.style.display=(cat==='전체'||c.getAttribute('data-cat')===cat)?'':'none'; });
+  }); }
+
+  // 라이트박스 퀵뷰
+  var lb=document.getElementById('lightbox');
+  var lbImg=document.getElementById('lbImg'), lbCat=document.getElementById('lbCat'), lbName=document.getElementById('lbName'),
+      lbMat=document.getElementById('lbMat'), lbPrice=document.getElementById('lbPrice'), lbStore=document.getElementById('lbStore');
+  function openLb(c){
+    lbImg.src=c.getAttribute('data-full'); lbImg.alt=c.getAttribute('data-name');
+    lbCat.textContent=c.getAttribute('data-cat');
+    lbName.textContent=c.getAttribute('data-name');
+    lbMat.textContent=c.getAttribute('data-material');
+    lbPrice.innerHTML=c.getAttribute('data-price')+'<small> 원</small>';
+    lb.classList.add('show'); document.body.style.overflow='hidden';
+  }
+  function closeLb(){ lb.classList.remove('show'); document.body.style.overflow=''; }
+  cards.forEach(function(c){ c.addEventListener('click',function(){ openLb(c); }); });
+  document.getElementById('lbX').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){ if(e.target===lb) closeLb(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+
+  // 스크롤 리빌 (데스크탑만)
+  if(window.matchMedia('(min-width:861px)').matches && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
