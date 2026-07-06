@@ -28,6 +28,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;background:var(--bg);color:var(--ink);
   line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden}
 .serif{font-family:"Zilla Slab","Pretendard",Georgia,serif}
+.pcbr{display:inline}.mbr{display:none}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{width:90%;max-width:1240px;margin:0 auto}
@@ -64,6 +65,7 @@ a{color:inherit;text-decoration:none}
   font-family:"Zilla Slab","Pretendard",serif;font-style:italic;font-size:.85rem;padding:5px 12px}
 
 @media (max-width:860px){
+  .pcbr{display:none}.mbr{display:inline}
   .topnav__links{position:fixed;inset:0 0 0 auto;width:74%;max-width:300px;background:var(--paper);flex-direction:column;
     justify-content:center;gap:26px;transform:translateX(100%);transition:transform .3s;box-shadow:-8px 0 40px rgba(0,0,0,.1);z-index:70}
   .topnav__links.open{transform:translateX(0)}
@@ -201,7 +203,7 @@ a{color:inherit;text-decoration:none}
         <img src="https://images.unsplash.com/photo-1604095616439-216735abec0c?auto=format&fit=crop&w=680&q=80" alt="공방 보울" loading="lazy">
         <figcaption class="mcard__cap"><span class="mcard__name">공방 보울 (소)</span><span class="mcard__price">28,000</span></figcaption></figure>
     </div>
-    <p class="shop__note">* 가격·재고는 네이버 스마트스토어 기준입니다. 핸드메이드 특성상 개체별 색·크기 차이가 있을 수 있어요.</p>
+    <p class="shop__note">* 가격·재고는 네이버 스마트스토어 기준입니다.<br class="mbr">핸드메이드 특성상 개체별 색·크기 차이가 있을 수 있어요.</p>
   </div>
 </section>
 
@@ -288,8 +290,8 @@ a{color:inherit;text-decoration:none}
     <div class="material__text reveal">
       <p class="eyebrow">Material</p>
       <h2 class="h2">물성을 먼저<br>생각합니다</h2>
-      <p>VESSEL의 그릇 대부분은 국내 소규모 공방과 함께 만듭니다.<br>기계로 찍어낸 균일함보다, 손이 남긴 미묘한 차이를 더 좋아합니다.</p>
-      <p>석기·도기·자작 합판처럼 시간이 지날수록 길드는 소재를 고릅니다.<br>빨리 사고 빨리 버리는 물건이 아니라, 오래 쓰며 정드는 물건을 지향해요.</p>
+      <p>VESSEL의 그릇 대부분은 국내 소규모 공방과 함께 만듭니다.<br class="pcbr">기계로 찍어낸 균일함보다, 손이 남긴 미묘한 차이를 더 좋아합니다.</p>
+      <p>석기·도기·자작 합판처럼 시간이 지날수록 길드는 소재를 고릅니다.<br class="pcbr">빨리 사고 빨리 버리는 물건이 아니라, 오래 쓰며 정드는 물건을 지향해요.</p>
       <p class="sign serif">— 사물을 고르는 사람들, VESSEL</p>
     </div>
   </div>
